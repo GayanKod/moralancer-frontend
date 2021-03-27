@@ -4,6 +4,18 @@
     padding: 0;
     font-family: 'PT Sans', sans-serif;
   }
-  .aboutus-container{
-    height: 84vh;
-  }
+  
+.aboutus-container,
+.data-container,
+.Gigs-container,
+.graphic-container,
+.home-container,
+.messages-container,
+.myprofile-container,
+.other-container,
+.programming-container,
+.services-container,
+.videoanimation-container,
+.writing-container{
+  height: 84vh;
+}
