@@ -1,0 +1,15 @@
+.footer-container{
+    height: 5px;
+     text-align: center;
+     color: #ee2737ff;
+     display: block;
+     border-top: 2px solid  #ba0020ff;
+     padding-top: 3px;
+ }
+ .footer-container>h6{
+     font-size: 15px;
+     float: left;
+ }
+ .footer-container>h5{
+     float: right;
+ }
