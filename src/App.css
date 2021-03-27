@@ -4,3 +4,17 @@
     padding: 0;
     font-family: 'PT Sans', sans-serif;
   }
+  
+.aboutus-container,
+.data-container,
+.Gigs-container,
+.graphic-container,
+.home-container,
+.messages-container,
+.myprofile-container,
+.other-container,
+.programming-container,
+.videoanimation-container,
+.writing-container{
+  height: 84vh;
+}
