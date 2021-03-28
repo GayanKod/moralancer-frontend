@@ -1,6 +1,6 @@
-import React from 'react'
-import SubNavbar from '../../SubNavbar'
-import Cards from '../../Cards'
+import React from 'react';
+import SubNavbar from '../../SubNavbar';
+import Cards from '../../Cards';
 
 function Services() {
     return (
@@ -11,4 +11,4 @@ function Services() {
     )
 }
 
-export default Services
+export default Services;

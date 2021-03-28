@@ -1,0 +1,47 @@
+.Gigs-container{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top:5%;
+}
+
+.Gig-container{
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 2vh;
+  width: 330px;
+  float: left;
+  margin: 5vh;
+}
+
+.gigimg{
+    width:300px;              /*Original image size should be 1280x900*/
+    position: relative;
+    height: 211px;
+}
+
+.label{
+    font-size: 12px;
+    color:rgb(158, 158, 158);
+}
+
+.seller{
+    font-size:13px;
+}
+
+.price{
+    font-size: 20px;
+}
+
+.rate{
+    float: right;
+    bottom: 0%;
+}
+
+.fa-star{
+    color:rgb(247, 224, 21);
+}
+
+.gigcards__item__link{
+    color:#000;
+}

@@ -1,10 +1,11 @@
 .footer-container{
-    height: 5px;
      text-align: center;
      color: #ee2737ff;
-     display: block;
+     display: inline-block;
      border-top: 2px solid  #ba0020ff;
      padding-top: 3px;
+     position: relative;
+     width:100%;
  }
  .footer-container>h6{
      font-size: 15px;
