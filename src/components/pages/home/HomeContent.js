@@ -9,7 +9,6 @@ function HomeContent() {
             <h1>"EARN WHILE YOU LEARN"</h1>
             <p> Are you looking for a way to earn money while studying?</p>
             <p>  You're in the right place.</p>
-            <p> - Create a new gig - </p>
             <p>Start making money online today!</p>
             <div className="homeContent-btns">
              <Button 
