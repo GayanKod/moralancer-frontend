@@ -1,11 +1,12 @@
 import React from 'react'
 import SubNavbar from '../../SubNavbar'
+import HomeContent from './HomeContent'
 
 function home() {
     return (
         <div className="home-container">
             <SubNavbar/>
-           <h1>Home</h1> 
+           <HomeContent/> 
         </div>
     )
 }

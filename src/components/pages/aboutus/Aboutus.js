@@ -1,11 +1,11 @@
 import React from 'react'
 import SubNavbar from '../../SubNavbar'
-
+import AboutusCards from '../../AboutusComponents/AboutusCards'
 function Aboutus() {
     return (
         <div className="aboutus-container">
             <SubNavbar/>
-             <h1>About us</h1>
+            <AboutusCards/>
         </div>
     )
 }
