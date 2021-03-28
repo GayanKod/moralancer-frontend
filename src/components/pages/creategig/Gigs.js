@@ -24,7 +24,7 @@ function Gigs() {
     return (
         <>
         <SubNavbar/>
-        <h1 className="header">My Gigs</h1>
+        <h1 className="header">GIGS</h1>
         <CreateGig />
         <div className='Gigs-container'>
         {Gigsdata.map(GigCreate)}

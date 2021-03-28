@@ -1,0 +1,87 @@
+.select-container{
+    width: 25%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .create-new-gig{
+      padding-left: 20%;
+      padding-right: 20%;
+  }
+  input{
+      width: 100%;
+      height: 40px;
+      border-radius: 10px;
+      margin: 5px;
+      border-width: thin;
+  }
+  input::placeholder{
+      padding-left: 10px;
+  }
+  .overview{
+      text-align: center;
+  }
+  .pricing{
+      text-align: center;
+  }
+  .description{
+      text-align: center;
+  }
+  .requirements{
+      text-align: center;
+  }
+  .create-new-gig{
+      padding-bottom: 30px;
+  }
+  .gig-submit{
+      width: 30%;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 20px;
+      color: white;
+      background-color: rgb(199, 22, 22);
+      border-style: none;
+  }
+  .gig-submit:hover{
+      cursor: pointer;
+  }
+  .gig-list{
+      list-style-type: none;
+  }
+  input[name='Gig-Title']{
+     font-size: 40px;
+     height: max-content;
+  }
+  input[name='Basic']{
+      font-size: 20px;
+      height: 60px;
+  }
+  input[name='Standard']{
+      font-size: 20px;
+      height: 60px;
+  }
+  input[name='Premium']{
+      font-size: 20px;
+      height: 60px;
+  }
+  input[name='Gig-description']{
+      font-size: 20px;
+      height: 60px;
+  }
+  input[name='Gig-requirements']{
+      font-size: 20px;
+      height: 60px;
+  }
+  .overview>h1{
+      color: #ee2737ff;
+  }
+  .pricing>h1{
+      color: #ee2737ff;
+  }
+  .requirements>h1{
+      color: #ee2737ff;
+  }
+  .description>h1{
+      color: #ee2737ff;
+  }

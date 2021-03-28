@@ -9,6 +9,7 @@ function CreateGig(){
                 <i class="fa fa-plus" aria-hidden="true"></i>
                 </div>
                 <span>Create a Gig</span>
+            
             </div>
         </div>
     );
