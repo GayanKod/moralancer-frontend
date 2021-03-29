@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function GigCard(props) {
     return(
-        <Link className='gigcards__item__link' to={props.path}>
+        <Link className='gigcards__item__link' to={`Gigs/${props.id}`}>
         <div className="Gig-container">
             <img className="gigimg" src={props.img} alt="" />
             <h4 className="label">{props.label}</h4>

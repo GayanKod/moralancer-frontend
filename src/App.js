@@ -15,6 +15,8 @@ import Writing from './components/pages/subPages/Writing'
 import MyProfile from './components/pages/profile/MyProfile'
 import Messages from './components/pages/messages/Messages'
 import Gigs from './components/pages/creategig/Gigs'
+import GigView from './components/GigView'
+import GigForm from './components/pages/creategig/GigForm'
 
 function App() {
     return (
@@ -35,6 +37,9 @@ function App() {
         <Route path='/myprofile' exact component={MyProfile}/>
         <Route path='/messages' exact component={Messages}/>
         <Route path='/Gigs' exact component={Gigs}/>
+        <Route path='/Gigs/:id' exact component={GigView}/>
+        <Route path='/GigForm' exact component={GigForm}/>
+
       </Switch>
       <Footer/>
         </Router>

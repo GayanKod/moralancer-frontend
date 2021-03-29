@@ -1,0 +1,24 @@
+.gig-operations{
+    width: 100%;
+     padding: 30px;
+ }
+ .btn-edit{
+     float: right;
+     margin: 10px;
+ }
+ .btn-delete{
+     float: right;
+     margin: 10px;
+ }
+ .gig-content{
+     text-align: center;
+ }
+ 
+ .view-title{
+     width: 100%;
+     height: 50px;
+     color: white;
+     background-color: rgb(190, 59, 59);
+     margin-top: 50px;
+    
+ }

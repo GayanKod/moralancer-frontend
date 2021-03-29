@@ -9,6 +9,7 @@ function GigCreate(Gigsdata){
   return(
     <GigCard
     key={Gigsdata.gigId}
+    id={Gigsdata.gigId}
     img={Gigsdata.gigimg}
     gigTitle={Gigsdata.gigTitle}
     label={Gigsdata.giglabel}
