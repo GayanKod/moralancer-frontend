@@ -17,10 +17,9 @@ import Messages from './components/pages/messages/Messages'
 import Gigs from './components/pages/creategig/Gigs'
 import GigView from './components/GigView'
 import GigForm from './components/pages/creategig/GigForm'
-import SignInHome from './components/pages/login/SignInHome'
 import SignUpHome from './components/pages/login/SignUpHome'
-import SellerSignIn from './components/pages/login/Seller/SellerSignIn'
-import BuyerSignIn from './components/pages/login/Buyer/BuyerSignIn'
+import SignIn from './components/pages/login/SignIn'
+
 
 function App() {
     return (
@@ -43,10 +42,8 @@ function App() {
         <Route path='/Gigs' exact component={Gigs}/>
         <Route path='/Gigs/:id' exact component={GigView}/>
         <Route path='/GigForm' exact component={GigForm}/>
-        <Route path='/SignInHome' exact component={SignInHome}/>
         <Route path='/SignUpHome' exact component={SignUpHome}/>
-        <Route path='/SellerSignIn' exact component={SellerSignIn}/>
-        <Route path='/BuyerSignIn' exact component={BuyerSignIn}/>
+        <Route path='/SignIn' exact component={SignIn}/>
       </Switch>
       <Footer/>
         </Router>

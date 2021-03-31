@@ -13,7 +13,7 @@ function HeroSection() {
                 what are you waiting for
             </p>
             <div className="hero-btns">
-            <Link to="/SignInHome">
+            <Link to="/SignIn">
              <Button 
              className="btns"
              buttonStyle="btn--outline"

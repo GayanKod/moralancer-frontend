@@ -86,7 +86,7 @@ function Navbar() {
 
             <li>
               <Link
-               to="/SignInHome"
+               to="/SignIn"
                className='nav-links-mobile'
                onClick={closeMobileMenu}
              >
@@ -94,7 +94,7 @@ function Navbar() {
              </Link>
            </li>
          </ul>
-         <Link to="/SignInHome">
+         <Link to="/SignIn">
          {button && <Button buttonStyle='btn--outline'>SIGN IN</Button>}
          </Link>
         </div>

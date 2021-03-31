@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import './BuyerSignIn.css'
+import './SignIn.css'
 
 function SellerSignIn() {
     const [email, setEmail] = useState("");
@@ -14,7 +14,7 @@ function SellerSignIn() {
     }
 
     return (
-     <div className='buyer-signin-sontainer'>
+     <div className='seller-signin-sontainer'>
 <div class="Signin-container" id="Signin-container">
 
    <div class="form-container log-in-container">
