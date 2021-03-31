@@ -19,6 +19,8 @@ import GigView from './components/GigView'
 import GigForm from './components/pages/creategig/GigForm'
 import SignInHome from './components/pages/login/SignInHome'
 import SignUpHome from './components/pages/login/SignUpHome'
+import SellerSignIn from './components/pages/login/Seller/SellerSignIn'
+import BuyerSignIn from './components/pages/login/Buyer/BuyerSignIn'
 
 function App() {
     return (
@@ -43,7 +45,8 @@ function App() {
         <Route path='/GigForm' exact component={GigForm}/>
         <Route path='/SignInHome' exact component={SignInHome}/>
         <Route path='/SignUpHome' exact component={SignUpHome}/>
-
+        <Route path='/SellerSignIn' exact component={SellerSignIn}/>
+        <Route path='/BuyerSignIn' exact component={BuyerSignIn}/>
       </Switch>
       <Footer/>
         </Router>
