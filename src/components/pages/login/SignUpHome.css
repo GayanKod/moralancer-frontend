@@ -11,3 +11,9 @@
     justify-content: center;
     display: flex;
 }
+.btns-seller{
+    padding: 10px;
+}
+.btns-buyer{
+    padding: 10px;
+}
