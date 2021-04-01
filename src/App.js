@@ -1,4 +1,6 @@
 import './App.css';
+import axios from "axios";
+import React, {useState, useEffect} from "react";
 import Navbar from './components/common/navbar';
 import{BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import welome from './components/pages/welcome/welcome'
@@ -18,7 +20,22 @@ import Gigs from './components/pages/creategig/Gigs'
 import GigView from './components/GigView'
 import GigForm from './components/pages/creategig/GigForm'
 
+
 function App() {
+
+  const [gigs, setGigs] = useState([]);
+
+  useEffect(() => {
+      function getGigs(){
+          axios.get("http://localhost:8070/gigs/").then((res) => {
+              setGigs(res.data);
+          }).catch((err) => {
+              console.log(err.message);
+          })
+      }
+      getGigs();
+  }, [])
+
     return (
       <>
       <Router>
@@ -37,7 +54,7 @@ function App() {
         <Route path='/myprofile' exact component={MyProfile}/>
         <Route path='/messages' exact component={Messages}/>
         <Route path='/Gigs' exact component={Gigs}/>
-        <Route path='/Gigs/:id' exact component={GigView}/>
+        <Route path='/Gigs/:id' render={props => <GigView {...props} gigs={gigs}/>} />
         <Route path='/GigForm' exact component={GigForm}/>
 
       </Switch>
