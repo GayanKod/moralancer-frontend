@@ -49,7 +49,7 @@ const GigView = (props) => {
                 <div className="gig-operations">
                 
                 <div className="btn-edit">
-                <Link to="/GigForm">
+                <Link to={`/Gigs/edit/${props.match.params.id}`}>
                 <Button className="btns"
                 buttonStyle="btn--primary"
                 buttonSize="btn--large">

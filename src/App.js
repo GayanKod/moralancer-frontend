@@ -19,6 +19,7 @@ import Messages from './components/pages/messages/Messages'
 import Gigs from './components/pages/creategig/Gigs'
 import GigView from './components/GigView'
 import GigForm from './components/pages/creategig/GigForm'
+import EditGig from './components/pages/creategig/EditGig'
 
 
 function App() {
@@ -54,9 +55,9 @@ function App() {
         <Route path='/myprofile' exact component={MyProfile}/>
         <Route path='/messages' exact component={Messages}/>
         <Route path='/Gigs' exact component={Gigs}/>
-        <Route path='/Gigs/:id' render={props => <GigView {...props} gigs={gigs}/>} />
+        <Route exact path='/Gigs/:id' render={props => <GigView {...props} gigs={gigs}/>} />
         <Route path='/GigForm' exact component={GigForm}/>
-
+        <Route exact path='/Gigs/edit/:id' render={props => <EditGig {...props} update={gigs}/>} />
       </Switch>
       <Footer/>
         </Router>
