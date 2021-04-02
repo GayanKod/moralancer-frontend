@@ -65,6 +65,7 @@ const EditGig = (props) =>{
         axios
             .put(`http://localhost:8070/gigs/update/${props.match.params.id}`,updateGig )
             .then(() => {
+                window.location.href=`/Gigs/${props.match.params.id}`
                 alert("Gig Successfully Updated");
             }).catch(() => {
                 alert("Please check and fill the form correctly");

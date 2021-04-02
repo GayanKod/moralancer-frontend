@@ -40,6 +40,7 @@ export default function GigForm() {
         }
 
         axios.post("http://localhost:8070/gigs/create", newGig).then(() => {
+            window.location.href='/Gigs'
             alert("Gig Successfully Created");
         }).catch(() => {
             alert("Please check and fill the form correctly");
