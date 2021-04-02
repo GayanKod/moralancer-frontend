@@ -19,11 +19,33 @@ export default function GigForm() {
     const [gigPremiumPrice, setgigPremiumPrice] = useState("");
     const [gigDesc, setgigDesc] = useState("");
     const [gigReq, setgigReq] = useState("");
+    const [fileName, setFileName] = useState("");
+
+    const OnChangeFile = e =>{
+        setFileName(e.target.files[0]);
+    }
 
     function SendGigData(e) {
         e.preventDefault();
 
-        const newGig = {
+        const formData = new FormData();
+
+        formData.append("gigTitle", gigTitle);
+        formData.append("gigCategory", gigCategory);
+        formData.append("gigSearchTags", gigSearchTags);
+        formData.append("gigBasicPriceDesc", gigBasicPriceDesc);
+        formData.append("gigBasicPrice", gigBasicPrice);
+        formData.append("gigStandardPriceDesc", gigStandardPriceDesc);
+        formData.append("gigStandardPrice", gigStandardPrice);
+        formData.append("gigPremiumPriceDesc", gigPremiumPriceDesc);
+        formData.append("gigPremiumPrice", gigPremiumPrice);
+        formData.append("gigDesc", gigDesc);
+        formData.append("gigImage", fileName);
+        formData.append("gigReq", gigReq);
+
+        
+        
+        /*const newGig = {
             
             gigTitle,
             gigCategory,
@@ -37,9 +59,9 @@ export default function GigForm() {
             gigDesc,
             gigReq
 
-        }
+        }*/
 
-        axios.post("http://localhost:8070/gigs/create", newGig).then(() => {
+        axios.post("http://localhost:8070/gigs/create", formData).then(() => {
             window.location.href='/Gigs'
             alert("Gig Successfully Created");
         }).catch(() => {
@@ -65,7 +87,7 @@ export default function GigForm() {
 
     return (
         <div className="create-new-gig">
-           <form onSubmit={SendGigData} >
+           <form onSubmit={SendGigData} encType="multipart/form-data" >
                <div className='overview'>
                 <h1>Gig overview</h1>
 
@@ -185,6 +207,11 @@ export default function GigForm() {
                                 setgigReq(e.target.value);
                         }}
                 ></textarea>
+
+                <div className="form-group">
+                    <label htmlFor="file">Choose Gig Image</label>
+                    <input type="file" fileName="gigImage" className="form-control-file" onChange={OnChangeFile}/>
+                </div>
 
                </div>
                <input type='submit' className="gig-submit"/>

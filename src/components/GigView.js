@@ -17,7 +17,9 @@ const GigView = (props) => {
     const [gigPremiumPriceDesc, setgigPremiumPriceDesc] = useState("");
     const [gigPremiumPrice, setgigPremiumPrice] = useState("");
     const [gigDesc, setgigDesc] = useState("");
+    const [gigImage, setgigImage] = useState("");
     const [gigReq, setgigReq] = useState("");
+
 
     useEffect(() => {
         axios
@@ -33,6 +35,7 @@ const GigView = (props) => {
                 setgigPremiumPriceDesc(res.data.gig.gigPremiumPriceDesc),
                 setgigPremiumPrice(res.data.gig.gigPremiumPrice),
                 setgigDesc(res.data.gig.gigDesc),
+                setgigImage(res.data.gig.gigImage),
                 setgigReq(res.data.gig.gigReq)
             ] ).catch(error => console.log(error));
 
@@ -76,7 +79,7 @@ const GigView = (props) => {
                 <div className="view-title">
                 <h1>{gigTitle}</h1>
                 </div>
-                <img src={props.gigimg} alt={gigCategory} />
+                <img src={`../../public/uploads/${gigImage}`} alt={gigCategory} />
                 <h4 >{gigCategory}</h4>
                 <h4 >By {props.gigSeller}</h4>
                 <h4> Rs. {gigBasicPrice}</h4>
