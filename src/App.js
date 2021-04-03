@@ -1,4 +1,6 @@
 import './App.css';
+import axios from "axios";
+import React, {useState, useEffect} from "react";
 import Navbar from './components/common/navbar';
 import{BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import welome from './components/pages/welcome/welcome'
@@ -21,9 +23,24 @@ import SignUpHome from './components/pages/login/SignUpHome'
 import SignIn from './components/pages/login/SignIn'
 import SellerSignUp from './components/pages/login/SellerSignUp'
 import BuyerSignUp from './components/pages/login/BuyerSignUp'
+import EditGig from './components/pages/creategig/EditGig'
 
 
 function App() {
+
+  const [gigs, setGigs] = useState([]);
+
+  useEffect(() => {
+      function getGigs(){
+          axios.get("http://localhost:8070/gigs/").then((res) => {
+              setGigs(res.data);
+          }).catch((err) => {
+              console.log(err.message);
+          })
+      }
+      getGigs();
+  }, [])
+
     return (
       <>
       <Router>
@@ -42,12 +59,13 @@ function App() {
         <Route path='/myprofile' exact component={MyProfile}/>
         <Route path='/messages' exact component={Messages}/>
         <Route path='/Gigs' exact component={Gigs}/>
-        <Route path='/Gigs/:id' exact component={GigView}/>
+        <Route exact path='/Gigs/:id' render={props => <GigView {...props} gigs={gigs}/>} />
         <Route path='/GigForm' exact component={GigForm}/>
         <Route path='/SignUpHome' exact component={SignUpHome}/>
         <Route path='/SignIn' exact component={SignIn}/>
         <Route path='/SellerSignUp' exact component={SellerSignUp}/>
         <Route path='/BuyerSignUp' exact component={BuyerSignUp}/>
+        <Route exact path='/Gigs/edit/:id' render={props => <EditGig {...props} update={gigs}/>} />
       </Switch>
       <Footer/>
         </Router>

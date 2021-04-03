@@ -7,7 +7,7 @@ function CreateGig(){
     return(
         <div className="createGigWrapper">
             <div className="createGigbutton">
-              <Link to="/GigForm">
+              <Link to="/GigForm" style={{ textDecoration: 'none' }}>
                 <div className="createGigIcon" >
                 <i class="fa fa-plus" aria-hidden="true"></i>
                 </div>

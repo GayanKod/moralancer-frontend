@@ -1,13 +1,13 @@
-import React, {useState} from 'react'
-import './GigForm.css'
-import {useForm} from 'react-hook-form'
-import {Select} from 'react-dropdown-select'
-import axios from "axios";
+import React, { useEffect, useImperativeHandle, useState } from 'react'
+import { Button } from '../../Button';
+import '../../GigView.css'
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
-export default function GigForm() {
 
-    //Create States for getting data
+const EditGig = (props) =>{
+
     const [gigTitle, setgigTitle] = useState("");
     const [gigCategory, setgigCategory] = useState("");
     const [gigSearchTags, setgigSearchTags] = useState("");
@@ -24,8 +24,32 @@ export default function GigForm() {
     const OnChangeFile = e =>{
         setFileName(e.target.files[0]);
     }
+    
+    function GetGigData() {
 
-    function SendGigData(e) {
+        useEffect(() => {
+            axios
+                .get(`http://localhost:8070/gigs/get/${props.match.params.id}`)
+                .then(res => [
+                    setgigTitle(res.data.gig.gigTitle),
+                    setgigCategory(res.data.gig.gigCategory),
+                    setgigSearchTags(res.data.gig.gigSearchTags),
+                    setgigBasicPriceDesc(res.data.gig.gigBasicPriceDesc),
+                    setgigBasicPrice(res.data.gig.gigBasicPrice),
+                    setgigStandardPriceDesc(res.data.gig.gigStandardPriceDesc),
+                    setgigStandardPrice(res.data.gig.gigStandardPrice),
+                    setgigPremiumPriceDesc(res.data.gig.gigPremiumPriceDesc),
+                    setgigPremiumPrice(res.data.gig.gigPremiumPrice),
+                    setgigDesc(res.data.gig.gigDesc),
+                    setFileName(res.data.gig.gigImage),
+                    setgigReq(res.data.gig.gigReq)
+                ] ).catch(error => console.log(error));
+    
+        }, []);
+        
+    }
+
+    function UpdateGigData(e) {
         e.preventDefault();
 
         const formData = new FormData();
@@ -42,56 +66,26 @@ export default function GigForm() {
         formData.append("gigDesc", gigDesc);
         formData.append("gigImage", fileName);
         formData.append("gigReq", gigReq);
-
-        
-        
-        /*const newGig = {
-            
-            gigTitle,
-            gigCategory,
-            gigSearchTags,
-            gigBasicPriceDesc,
-            gigBasicPrice,
-            gigStandardPriceDesc,
-            gigStandardPrice,
-            gigPremiumPriceDesc,
-            gigPremiumPrice,
-            gigDesc,
-            gigReq
-
-        }*/
-
-        axios.post("http://localhost:8070/gigs/create", formData).then(() => {
-            window.location.href='/Gigs'
-            alert("Gig Successfully Created");
-        }).catch(() => {
-            alert("Please check and fill the form correctly");
-        })
-        
-    }
     
-        
+        axios
+            .put(`http://localhost:8070/gigs/update/${props.match.params.id}`,formData )
+            .then(() => {
+                window.location.href=`/Gigs/${props.match.params.id}`
+                alert("Gig Successfully Updated");
+            }).catch(() => {
+                alert("Please check and fill the form correctly");
+            })
+        }
 
-    //const { register, handleSubmit}=useForm();
-   // const onSubmit =data => {console.log(data)}
-   /* const Countries = [
-        { label: "Graphic & Design", value:"Graphic & Design"},
-        { label: "Writing & Tanslation", value:"Graphic & Design"},
-        { label: "Video & Animation", value:"Graphic & Design"},
-        { label: "Cocos Islands", value:"Graphic & Design"},
-        { label: "Programming & Tech", value:"Graphic & Design" },
-        { label: "Data"},
-        { label: "Other" }
-      ];*/
+    GetGigData();
 
-
-    return (
+    return(
         <div className="create-new-gig">
-           <form onSubmit={SendGigData} encType="multipart/form-data" >
+           <form onSubmit={UpdateGigData} encType="multipart/form-data">
                <div className='overview'>
                 <h1>Gig overview</h1>
 
-               <input type='text' placeholder='Gig Title' name='Gig-Title' 
+               <input type='text' placeholder='Gig Title' name='Gig-Title' value={gigTitle}
                onChange={(e) => {
 
                    setgigTitle(e.target.value);
@@ -99,7 +93,7 @@ export default function GigForm() {
                />
 
                <div className='select-container'>
-               <select placeholder="Select Category"
+               <select placeholder="Select Category" value={gigCategory}
                onChange={(e) => {
 
                     setgigCategory(e.target.value);
@@ -116,7 +110,7 @@ export default function GigForm() {
                 </div>
 
 
-               <input type='text' placeholder='Search Tags' name='Search-tags' 
+               <input type='text' placeholder='Search Tags' name='Search-tags' value={gigSearchTags}
                     onChange={(e) => {
 
                         setgigSearchTags(e.target.value);
@@ -132,7 +126,7 @@ export default function GigForm() {
 
                        <li> <h4>Basic</h4>
 
-                       <textarea cols="110" rows="5"  placeholder='Basic Pricing Description' name='Basic'
+                       <textarea cols="110" rows="5"  placeholder='Basic Pricing Description' name='Basic' value={gigBasicPriceDesc}
                            onChange={(e) => {
 
                                 setgigBasicPriceDesc(e.target.value);
@@ -140,7 +134,7 @@ export default function GigForm() {
                         ></textarea>
     
 
-                       <input type='text' placeholder='Price' name='Basic-Price' 
+                       <input type='text' placeholder='Price' name='Basic-Price' value={gigBasicPrice} 
                            onChange={(e) => {
 
                                 setgigBasicPrice(e.target.value);
@@ -150,14 +144,14 @@ export default function GigForm() {
 
                        <li> <h4>Standard</h4>
 
-                        <textarea cols="110" rows="5" placeholder='Standard Pricing Description' name='Standard'
+                        <textarea cols="110" rows="5" placeholder='Standard Pricing Description' name='Standard' value={gigStandardPriceDesc}
                            onChange={(e) => {
 
                                 setgigStandardPriceDesc(e.target.value);
                         }}
                         ></textarea>
 
-                       <input type='text' placeholder='Price' name='Standard-Price' 
+                       <input type='text' placeholder='Price' name='Standard-Price' value={gigStandardPrice}
                            onChange={(e) => {
 
                                 setgigStandardPrice(e.target.value);
@@ -168,7 +162,7 @@ export default function GigForm() {
 
                        <li> <h4>Premium</h4>
 
-                        <textarea cols="110" rows="5" placeholder='Premium Pricing Description' name='Premium'
+                        <textarea cols="110" rows="5" placeholder='Premium Pricing Description' name='Premium' value={gigPremiumPriceDesc}
                            onChange={(e) => {
 
                                 setgigPremiumPriceDesc(e.target.value);
@@ -176,7 +170,7 @@ export default function GigForm() {
                         ></textarea>
 
                        
-                       <input type='text' placeholder='Price' name='Premium-Price' 
+                       <input type='text' placeholder='Price' name='Premium-Price' value={gigPremiumPrice}
                            onChange={(e) => {
 
                                 setgigPremiumPrice(e.target.value);
@@ -189,7 +183,7 @@ export default function GigForm() {
                <div className='description'>
                 <h1>Gig description</h1>
 
-                <textarea cols="110" rows="5" placeholder='Gig Description' name='Gig-description'
+                <textarea cols="110" rows="5" placeholder='Gig Description' name='Gig-description' value={gigDesc}
                     onChange={(e) => {
 
                                 setgigDesc(e.target.value);
@@ -201,7 +195,7 @@ export default function GigForm() {
                <div className='requirements'>
                 <h1>Gig requirements</h1>
 
-                <textarea cols="110" rows="5" placeholder='Gig requirements' name='Gig-requirements'
+                <textarea cols="110" rows="5" placeholder='Gig requirements' name='Gig-requirements' value={gigReq}
                     onChange={(e) => {
 
                                 setgigReq(e.target.value);
@@ -210,7 +204,7 @@ export default function GigForm() {
 
                 <div className="form-group">
                     <label htmlFor="file">Choose Gig Image</label>
-                    <input type="file" fileName="gigImage" className="form-control-file" onChange={OnChangeFile}/>
+                    <input type="file" fileName="gigImage" className="form-control-file" onChange={OnChangeFile} setValue={fileName}/>
                 </div>
 
                </div>
@@ -218,5 +212,8 @@ export default function GigForm() {
 
            </form> 
         </div>
-    )
+    );
+    
 }
+
+export default EditGig;
