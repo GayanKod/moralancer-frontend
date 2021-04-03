@@ -204,7 +204,7 @@ const EditGig = (props) =>{
 
                 <div className="form-group">
                     <label htmlFor="file">Choose Gig Image</label>
-                    <input type="file" fileName="gigImage" className="form-control-file" onChange={OnChangeFile}/>
+                    <input type="file" fileName="gigImage" className="form-control-file" onChange={OnChangeFile} setValue={fileName}/>
                 </div>
 
                </div>

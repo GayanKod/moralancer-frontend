@@ -7,7 +7,7 @@ function GigCard({props}) {
             {props.map((gig,key)=>(
                 <Link className='gigcards__item__link' to={`Gigs/${gig._id}`}>
                 <div className="Gig-container" key={key}>
-                <img className="gigimg" src={gig.img} alt="" />
+                <img className="gigimg" src={`/uploads/gigs/${gig.gigImage}`} alt="" />
                 <h4 className="label">{gig.gigCategory}</h4>
                 <h3 className="title">{gig.gigTitle}</h3>
                 <h4 className="seller">By {gig.seller}</h4>

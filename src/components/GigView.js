@@ -79,7 +79,7 @@ const GigView = (props) => {
                 <div className="view-title">
                 <h1>{gigTitle}</h1>
                 </div>
-                <img src={`../../public/uploads/${gigImage}`} alt={gigCategory} />
+                <img className="gig-view-image" src={`/uploads/gigs/${gigImage}`} alt={gigCategory} />
                 <h4 >{gigCategory}</h4>
                 <h4 >By {props.gigSeller}</h4>
                 <h4> Rs. {gigBasicPrice}</h4>
