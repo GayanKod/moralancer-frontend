@@ -23,7 +23,7 @@ const GigView = (props) => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8070/gigs/get/${props.match.params.id}`)
+            .get(`http://localhost:5000/api/gigs/get/${props.match.params.id}`)
             .then(res => [
                 setgigTitle(res.data.gig.gigTitle),
                 setgigCategory(res.data.gig.gigCategory),
@@ -44,7 +44,7 @@ const GigView = (props) => {
     const [Gig, setGig] = useState([]);
     //Delete Gig by Id
     const deleteGig = id => {
-        axios.delete(`http://localhost:8070/gigs/delete/${props.match.params.id}`)
+        axios.delete(`http://localhost:5000/api/gigs/delete/${props.match.params.id}`)
         .then(res =>
         window.location.href='/Gigs',
         alert("Gig Deleted"));

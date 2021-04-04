@@ -29,7 +29,7 @@ const EditGig = (props) =>{
 
         useEffect(() => {
             axios
-                .get(`http://localhost:8070/gigs/get/${props.match.params.id}`)
+                .get(`http://localhost:5000/api/gigs/get/${props.match.params.id}`)
                 .then(res => [
                     setgigTitle(res.data.gig.gigTitle),
                     setgigCategory(res.data.gig.gigCategory),
@@ -68,7 +68,7 @@ const EditGig = (props) =>{
         formData.append("gigReq", gigReq);
     
         axios
-            .put(`http://localhost:8070/gigs/update/${props.match.params.id}`,formData )
+            .put(`http://localhost:5000/api/gigs/update/${props.match.params.id}`,formData )
             .then(() => {
                 window.location.href=`/Gigs/${props.match.params.id}`
                 alert("Gig Successfully Updated");

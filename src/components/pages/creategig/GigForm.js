@@ -61,7 +61,7 @@ export default function GigForm() {
 
         }*/
 
-        axios.post("http://localhost:8070/gigs/create", formData).then(() => {
+        axios.post("http://localhost:5000/api/gigs/create", formData).then(() => {
             window.location.href='/Gigs'
             alert("Gig Successfully Created");
         }).catch(() => {

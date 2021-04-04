@@ -12,7 +12,7 @@ function Gigs(){
 
   useEffect(() => {
       function getGigs(){
-          axios.get("http://localhost:8070/gigs/").then((res) => {
+          axios.get("http://localhost:5000/api/gigs/").then((res) => {
               setGigs(res.data);
           }).catch((err) => {
               console.log(err.message);
