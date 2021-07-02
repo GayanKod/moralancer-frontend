@@ -49,7 +49,7 @@ const Activate = ({ match }) => {
   };
 
   return (
-    <div className='min-h-screen bg-red-100 text-red-900 flex justify-center'>
+    <div className='min-h-screen bg-red-100 text-red-700 flex justify-center'>
       {isAuth() ? <Redirect to='/' /> : null}
       <ToastContainer />
       <div className='max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1'>
@@ -84,8 +84,8 @@ const Activate = ({ match }) => {
                   href='/register'
                   target='_self'
                 >
-                  <i className='fas fa-sign-in-alt fa 1x w-6  -ml-2 text-red-500' />
-                  <span className='ml-4'>Sign Up</span>
+                  <i className='fas fa-sign-in-alt fa 1x w-6  -ml-2 text-red-700' />
+                  <span className='ml-4 text-red-700'>Sign Up</span>
                 </a>
               </div>
             </form>
