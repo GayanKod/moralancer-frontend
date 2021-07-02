@@ -26,7 +26,6 @@ function Gigs(){
 
     <>
         <SubNavbar/>
-        <h1 className="header">GIGS</h1>
         <CreateGig />
         <div className='Gigs-container'>
         <GigCard props={gigs}/>

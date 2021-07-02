@@ -5,7 +5,7 @@ function Messages() {
     return (
         <div className="messages-container">
             <SubNavbar/>
-            <h1>messages</h1>
+            
         </div>
     )
 }

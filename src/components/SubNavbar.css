@@ -1,5 +1,4 @@
 .sub-navbar {
-    padding-top: 80px;
     background: #fff;
     height: 80px;
     display: flex;
@@ -9,18 +8,17 @@
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: #ee2737ff;
     align-items: flex-end;
     justify-content: center;
     height: 100px;
+    margin-top: 20px;
   }
   
   .sub-navbar-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
- 
+    width: 70%;
   }
   
   .sub-nav-item {
@@ -37,7 +35,7 @@
   }
   
   .sub-nav-links:hover {
-    border-bottom: 7px solid  #ba0020ff;
+    border-bottom: 7px solid  rgb(255, 255, 255);
     transition: all 0.2s ease-out;
   }
   .sub-navbar-container > ul{
@@ -47,5 +45,11 @@
     padding:0px; 
     display:flex; 
     overflow:hidden;
-    background:#ee2737ff;
+    background:rgb(211, 29, 44);
+    width: 70%;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-radius: 40px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
   }

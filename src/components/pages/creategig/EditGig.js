@@ -3,6 +3,7 @@ import { Button } from '../../Button';
 import '../../GigView.css'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './GigForm.css'
 
 
 
@@ -83,7 +84,7 @@ const EditGig = (props) =>{
         <div className="create-new-gig">
            <form onSubmit={UpdateGigData} encType="multipart/form-data">
                <div className='overview'>
-                <h1>Gig overview</h1>
+                <h1 className="gig-heading">Gig overview</h1>
 
                <input type='text' placeholder='Gig Title' name='Gig-Title' value={gigTitle}
                onChange={(e) => {
@@ -93,7 +94,7 @@ const EditGig = (props) =>{
                />
 
                <div className='select-container'>
-               <select placeholder="Select Category" value={gigCategory}
+               <select className="gig-select" placeholder="Select Category" value={gigCategory}
                onChange={(e) => {
 
                     setgigCategory(e.target.value);
@@ -121,12 +122,12 @@ const EditGig = (props) =>{
 
 
                <div className="pricing">
-                   <h1>Gig Pricing</h1>
+                   <h1 className="gig-heading">Gig Pricing</h1>
                    <ul className="gig-list">
 
-                       <li> <h4>Basic</h4>
+                       <li> <h4 className="gig-pricing">Basic</h4>
 
-                       <textarea cols="110" rows="5"  placeholder='Basic Pricing Description' name='Basic' value={gigBasicPriceDesc}
+                       <textarea className="gig-text-area" cols="110" rows="5"  placeholder='Basic Pricing Description' name='Basic' value={gigBasicPriceDesc}
                            onChange={(e) => {
 
                                 setgigBasicPriceDesc(e.target.value);
@@ -142,9 +143,9 @@ const EditGig = (props) =>{
                        />
                        </li>
 
-                       <li> <h4>Standard</h4>
+                       <li> <h4 className="gig-pricing">Standard</h4>
 
-                        <textarea cols="110" rows="5" placeholder='Standard Pricing Description' name='Standard' value={gigStandardPriceDesc}
+                        <textarea className="gig-text-area" cols="110" rows="5" placeholder='Standard Pricing Description' name='Standard' value={gigStandardPriceDesc}
                            onChange={(e) => {
 
                                 setgigStandardPriceDesc(e.target.value);
@@ -160,9 +161,9 @@ const EditGig = (props) =>{
                        </li>
 
 
-                       <li> <h4>Premium</h4>
+                       <li> <h4 className="gig-pricing">Premium</h4>
 
-                        <textarea cols="110" rows="5" placeholder='Premium Pricing Description' name='Premium' value={gigPremiumPriceDesc}
+                        <textarea className="gig-text-area" cols="110" rows="5" placeholder='Premium Pricing Description' name='Premium' value={gigPremiumPriceDesc}
                            onChange={(e) => {
 
                                 setgigPremiumPriceDesc(e.target.value);
@@ -181,9 +182,9 @@ const EditGig = (props) =>{
 
                </div>
                <div className='description'>
-                <h1>Gig description</h1>
+                <h1 className="gig-heading">Gig description</h1>
 
-                <textarea cols="110" rows="5" placeholder='Gig Description' name='Gig-description' value={gigDesc}
+                <textarea className="gig-text-area" cols="110" rows="5" placeholder='Gig Description' name='Gig-description' value={gigDesc}
                     onChange={(e) => {
 
                                 setgigDesc(e.target.value);
@@ -193,9 +194,9 @@ const EditGig = (props) =>{
                </div>
             
                <div className='requirements'>
-                <h1>Gig requirements</h1>
+                <h1 className="gig-heading">Gig requirements</h1>
 
-                <textarea cols="110" rows="5" placeholder='Gig requirements' name='Gig-requirements' value={gigReq}
+                <textarea className="gig-text-area" cols="110" rows="5" placeholder='Gig requirements' name='Gig-requirements' value={gigReq}
                     onChange={(e) => {
 
                                 setgigReq(e.target.value);

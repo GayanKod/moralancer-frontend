@@ -1,0 +1,71 @@
+.profile-container{
+    width: 50%;
+    float: left;
+    height: 550px;
+    margin-top: 30vh;
+    
+}
+.row{
+    width: 70%;
+    height: 50vh;
+    background-image: url('../../../assets/img/profile-background.png');
+    border-radius: 20px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+    display: flex;
+    margin: 1% auto 20px auto;
+    justify-content: space-evenly;
+    align-items: center;
+    background-repeat: no-repeat; /*prevent background from repeating*/
+    background-size: cover; 
+}
+
+.profile-img{
+    float: left;
+    background-color: rgb(221, 205, 205);
+    width: 50%;
+    height: auto;
+    border-radius: 100%;
+    transform: translateX(50%);
+    float: initial;
+    
+}
+.profile-content{
+    background-color: rgba(255, 255, 255, 0.904);
+    height: 80%;
+    width: 50%;
+    float: left;
+    margin: 30px;
+    border-radius: 0 30px 30px 0;
+    
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+.profile-btns{
+    transform: translateX(35%);
+    margin-top: 10px;
+    float: initial;
+    margin-bottom: 10px;
+}
+.title{
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    min-height: 32px;
+    color: #3C4858;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Roboto Slab","Times New Roman",serif;
+}
+.profession{
+    margin-left: 10px;
+}
+.bio-description{
+    margin: 1.071rem auto 0;
+    max-width: 600px;
+    color: #999;
+    font-weight: 300;
+    margin-left: 10px;
+}
