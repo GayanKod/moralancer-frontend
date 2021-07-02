@@ -3,6 +3,7 @@ import authSvg from '../assets/img/update.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import { updateUser, isAuth, getCookie, signout } from '../helpers/auth';
+import Navbar from '../components/common/navbar'
 require("dotenv").config();
 const dotenv = require("dotenv");
 
@@ -75,6 +76,8 @@ const Private = ({ history }) => {
   };
 
   return (
+    <div>
+    <Navbar/>
     <div className='min-h-screen bg-red-100 text-red-700 flex justify-center'>
       <ToastContainer />
       <div className='max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1'>
@@ -153,6 +156,7 @@ const Private = ({ history }) => {
         </div>
       </div>
       ;
+    </div>
     </div>
   );
 };

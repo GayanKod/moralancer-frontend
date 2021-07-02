@@ -4,6 +4,7 @@ import { Button } from './Button';
 import './GigView.css'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import NavbarSO from './common/navbarSO';
 
 
 const GigView = (props) => {
@@ -53,6 +54,7 @@ const GigView = (props) => {
 
     if (props) {
         return (<>
+            <NavbarSO/>
             <div className="gigview-container">
                 <div className="gig-operations">
                 

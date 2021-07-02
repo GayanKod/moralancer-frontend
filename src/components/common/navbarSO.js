@@ -4,13 +4,22 @@ import { Link } from 'react-router-dom';
 import './navbar.css';
 import Dropdown from '../Dropdown';
 import logo from '../../assets/img/logo.png'
-function Navbar() {
+import { signout } from '../../helpers/auth';
+import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
+function NavbarSO() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
+  const history = useHistory();
+
+  const [user,setUser] = useState(localStorage.getItem("user"))
+    console.log(typeof(JSON.parse(user)))
+  
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -46,6 +55,7 @@ function Navbar() {
   return (
     <>
       <nav className='navbar'>
+     
         <div className='navbar-container'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           <img src={logo} />
@@ -55,7 +65,7 @@ function Navbar() {
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+              <Link to='/home' className='nav-links' onClick={closeMobileMenu}>
                 Home
               </Link>
             </li>
@@ -83,24 +93,27 @@ function Navbar() {
                 About Us
               </Link>
             </li>
-
-            <li>
-              <Link
-               to="/SignIn"
-               className='nav-links-mobile'
-               onClick={closeMobileMenu}
-             >
-               Sign IN
-             </Link>
-           </li>
+        <li>
+                        <button onClick={() => {
+                            signout(() => {
+                                history.push('/');
+                                toast.success('Signout Successfully');
+                            });
+            }} className="nav-links-mobile">Sign Out</button>
+        </li>
          </ul>
-         <Link to="/SignIn">
-         {button && <Button buttonStyle='btn--outline'>SIGN IN</Button>}
-         </Link>
+         
+         {button && <Button onClick={() => {
+                    signout(() => {
+                      toast.error('Signout Successfully');
+                      history.push('/');
+                    });
+                  }} buttonStyle='btn--outline'>SIGN OUT</Button>}
+         
         </div>
       </nav>
     </>
   );
 }
 
-export default Navbar
+export default NavbarSO;

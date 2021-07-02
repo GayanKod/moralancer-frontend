@@ -3,6 +3,7 @@ import './GigForm.css'
 import {useForm} from 'react-hook-form'
 import {Select} from 'react-dropdown-select'
 import axios from "axios";
+import NavbarSO from '../../common/navbarSO';
 
 
 export default function GigForm() {
@@ -86,6 +87,8 @@ export default function GigForm() {
 
 
     return (
+        <div>
+        <NavbarSO/>
         <div className="create-new-gig">
            <form onSubmit={SendGigData} encType="multipart/form-data" >
                <div className='overview'>
@@ -218,5 +221,6 @@ export default function GigForm() {
 
            </form> 
         </div>
+    </div>
     )
 }

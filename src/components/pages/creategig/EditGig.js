@@ -3,6 +3,7 @@ import { Button } from '../../Button';
 import '../../GigView.css'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import NavbarSO from '../../common/navbarSO';
 
 
 
@@ -80,6 +81,8 @@ const EditGig = (props) =>{
     GetGigData();
 
     return(
+        <div>
+        <NavbarSO/>
         <div className="create-new-gig">
            <form onSubmit={UpdateGigData} encType="multipart/form-data">
                <div className='overview'>
@@ -212,6 +215,7 @@ const EditGig = (props) =>{
 
            </form> 
         </div>
+    </div>
     );
     
 }

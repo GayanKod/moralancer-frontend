@@ -5,6 +5,7 @@ import Gigsdata from "../../Gigsdata";
 import CreateGig from "./CreateGig";
 import axios from "axios";
 import React, {useState, useEffect} from "react";
+import NavbarSO from '../../common/navbarSO';
 
 function Gigs(){
 
@@ -25,6 +26,7 @@ function Gigs(){
   return(
 
     <>
+        <NavbarSO />
         <SubNavbar/>
         <h1 className="header">GIGS</h1>
         <CreateGig />

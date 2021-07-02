@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import { authenticate, isAuth } from '../helpers/auth';
 import { Link, Redirect } from 'react-router-dom';
+import Navbar from '../components/common/navbar'
 require("dotenv").config();
 const dotenv = require("dotenv");
 
@@ -64,6 +65,8 @@ const BuyerRegister = () => {
   };
 
   return (
+    <div>
+    <Navbar/>
     <div className='min-h-screen bg-red-100 text-red-600 flex justify-center'>
       {isAuth() ? <Redirect to='/' /> : null}
       <ToastContainer />
@@ -142,6 +145,7 @@ const BuyerRegister = () => {
         </div>
       </div>
       ;
+    </div>
     </div>
   );
 };

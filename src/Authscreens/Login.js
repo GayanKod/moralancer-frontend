@@ -7,6 +7,7 @@ import { authenticate, isAuth } from '../helpers/auth';
 import { Link, Redirect } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
+import Navbar from '../components/common/navbar'
 require("dotenv").config();
 const dotenv = require("dotenv");
 
@@ -105,6 +106,8 @@ const Login = ({ history }) => {
     }
   };
   return (
+    <div>
+    <Navbar/>
     <div className='min-h-screen bg-red-100 text-red-600 flex justify-center'>
       {isAuth() ? <Redirect to='/' /> : null}
       <ToastContainer />
@@ -207,6 +210,7 @@ const Login = ({ history }) => {
           ></div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

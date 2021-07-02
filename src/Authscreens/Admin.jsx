@@ -4,6 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import { updateUser, isAuth, getCookie, signout } from '../helpers/auth';
 import { Link, Redirect } from 'react-router-dom';
+import Navbar from '../components/common/navbar'
+
 require("dotenv").config();
 const dotenv = require("dotenv");
 
@@ -76,7 +78,9 @@ const Admin = ({ history }) => {
   };
 
   return (
-    <div className='min-h-screen bg-gray-100 text-gray-900 flex justify-center'>
+    <div>
+    <Navbar />
+      <div className='min-h-screen bg-gray-100 text-gray-900 flex justify-center'>
       <ToastContainer />
       <div className='max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1'>
         <div className='lg:w-1/2 xl:w-5/12 p-6 sm:p-12'>
@@ -154,6 +158,7 @@ const Admin = ({ history }) => {
         </div>
       </div>
       ;
+    </div>
     </div>
   );
 };

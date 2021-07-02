@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import authSvg from '../assets/img/forget.png';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
+import Navbar from '../components/common/navbar'
 require("dotenv").config();
 const dotenv = require("dotenv");
 
@@ -40,6 +41,8 @@ const ForgetPassword = ({history}) => {
     }
   };
   return (
+    <div>
+    <Navbar/>
     <div className='min-h-screen bg-red-100 text-red-600 flex justify-center'>
       <ToastContainer />
       <div className='max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1'>
@@ -80,6 +83,7 @@ const ForgetPassword = ({history}) => {
         </div>
       </div>
       ;
+    </div>
     </div>
   );
 };

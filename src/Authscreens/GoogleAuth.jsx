@@ -1,6 +1,7 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 import axios from 'axios';
+import Navbar from '../components/common/navbar'
 require("dotenv").config();
 const dotenv = require("dotenv");
 
@@ -23,6 +24,8 @@ const Google = ({ informParent = f => f , clientId, apiUrl}) => {
       });
   };
   return (
+    <div>
+    <Navbar/>
     <div className='pb-3'>
       <GoogleLogin
         clientId={`895118553272-tfh7rqmqn7pgt3e0nsp53vgk2pe2gn8v.apps.googleusercontent.com`}
@@ -42,6 +45,7 @@ const Google = ({ informParent = f => f , clientId, apiUrl}) => {
         )}
         cookiePolicy={'single_host_origin'}
       />
+    </div>
     </div>
   );
 };

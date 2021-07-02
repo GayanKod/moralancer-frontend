@@ -5,8 +5,10 @@ import axios from 'axios';
 import jwt from 'jsonwebtoken';
 import { authenticate, isAuth } from '../helpers/auth';
 import { Link, Redirect } from 'react-router-dom';
+import Navbar from '../components/common/navbar';
 require("dotenv").config();
 const dotenv = require("dotenv");
+
 
 const Activate = ({ match }) => {
   const [formData, setFormData] = useState({
@@ -49,6 +51,8 @@ const Activate = ({ match }) => {
   };
 
   return (
+    <div>
+      <Navbar />
     <div className='min-h-screen bg-red-100 text-red-700 flex justify-center'>
       {isAuth() ? <Redirect to='/' /> : null}
       <ToastContainer />
@@ -99,6 +103,7 @@ const Activate = ({ match }) => {
         </div>
       </div>
       ;
+    </div>
     </div>
   );
 };
