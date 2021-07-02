@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import authSvg from '../assets/img/forget.svg';
+import authSvg from '../assets/img/forget.png';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 require("dotenv").config();
