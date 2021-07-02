@@ -2,9 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { Button } from '../../Button';
 import './SignUpHome.css'
+import Navbar from '../../common/navbar';
 
 function SignUpHome() {
     return (
+        <div>
+        <Navbar/>
         <div  className="SignUpHome-container">
             <div className="SignUpHome-selection">
 
@@ -29,6 +32,7 @@ function SignUpHome() {
                 </div>
                 </div>
         </div>
+    </div>
     )
 }
 
