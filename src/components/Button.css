@@ -14,14 +14,16 @@
     background-color: var(--primary);
     color: #242424;
     border: 1px solid var(--primary);
+    border-radius: 30px;
   }
   
   .btn--outline {
     background-color: rgba(255, 255, 255, 0.795);
     color: #ee2737ff;
     padding: 8px 20px;
-    border: 1px solid var(--primary);
+    border-radius: 30px;
     transition: all 0.3s ease-out;
+    border: 2px solid #ee2737ff;
   }
   
   .btn--medium {
@@ -40,4 +42,5 @@
     background: #ba0020ff;
     color: #fff;
     transition: 250ms;
+    transform: scale(1.1);
   }

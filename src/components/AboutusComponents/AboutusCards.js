@@ -10,7 +10,7 @@ import Sohan from '../../assets/img/sohan.jpg'
 function AboutusCards() {
   return (
     <div className='about-us'>
-      <h1>CHECK OUT OUR TEAM!</h1>
+      <h1 id="aboutus-header">CHECK OUT OUR TEAM!</h1>
       <div className='about-us-container'>
         <div className='aboutus-wrapper'>
           <ul className="aboutus-ul">

@@ -7,6 +7,7 @@
   .create-new-gig{
       padding-left: 20%;
       padding-right: 20%;
+      padding-top: 20px;
   }
   input{
       width: 100%;
@@ -73,15 +74,45 @@
       font-size: 20px;
       height: 60px;
   }
-  .overview>h1{
-      color: #ee2737ff;
+ 
+  .gig-text-area{
+    width: 100%;
+    background-color: #eee;
+    border-radius: 20px;
+    padding: 12px 15px;
   }
-  .pricing>h1{
-      color: #ee2737ff;
+  .form-control-file{
+    width: auto;
+    height: 20vh;
+   margin-left: 10%;
   }
-  .requirements>h1{
-      color: #ee2737ff;
+  .gig-select{
+    background-color: #eee;
+    height: 50px;
+    border-radius: 10px;
+    transform: translateX(-30px);
   }
-  .description>h1{
-      color: #ee2737ff;
+  .gig-heading{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: rgb(202, 39, 67);
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+    
+  }
+
+  .img-btn{
+    color: rgb(202, 39, 67);
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    width:100px;
+  }
+
+  .gig-pricing{
+    font-family: "Roboto Slab","Times New Roman",serif;
+    font-weight: 700;
+    font-size: x-large;
   }

@@ -92,7 +92,7 @@ export default function GigForm() {
         <div className="create-new-gig">
            <form onSubmit={SendGigData} encType="multipart/form-data" >
                <div className='overview'>
-                <h1>Gig overview</h1>
+                <h1 className="gig-heading">Gig overview</h1>
 
                <input type='text' placeholder='Gig Title' name='Gig-Title' 
                onChange={(e) => {
@@ -102,7 +102,7 @@ export default function GigForm() {
                />
 
                <div className='select-container'>
-               <select placeholder="Select Category"
+               <select className="gig-select" placeholder="Select Category"
                onChange={(e) => {
 
                     setgigCategory(e.target.value);
@@ -130,12 +130,12 @@ export default function GigForm() {
 
 
                <div className="pricing">
-                   <h1>Gig Pricing</h1>
+                   <h1 className="gig-heading">Gig Pricing</h1>
                    <ul className="gig-list">
 
-                       <li> <h4>Basic</h4>
+                       <li> <h4 className="gig-pricing">Basic</h4>
 
-                       <textarea cols="110" rows="5"  placeholder='Basic Pricing Description' name='Basic'
+                       <textarea className="gig-text-area" cols="110" rows="5"  placeholder='Basic Pricing Description' name='Basic'
                            onChange={(e) => {
 
                                 setgigBasicPriceDesc(e.target.value);
@@ -151,9 +151,9 @@ export default function GigForm() {
                        />
                        </li>
 
-                       <li> <h4>Standard</h4>
+                       <li> <h4 className="gig-pricing">Standard</h4>
 
-                        <textarea cols="110" rows="5" placeholder='Standard Pricing Description' name='Standard'
+                        <textarea className="gig-text-area" cols="110" rows="5" placeholder='Standard Pricing Description' name='Standard'
                            onChange={(e) => {
 
                                 setgigStandardPriceDesc(e.target.value);
@@ -169,9 +169,9 @@ export default function GigForm() {
                        </li>
 
 
-                       <li> <h4>Premium</h4>
+                       <li> <h4 className="gig-pricing">Premium</h4>
 
-                        <textarea cols="110" rows="5" placeholder='Premium Pricing Description' name='Premium'
+                        <textarea className="gig-text-area" cols="110" rows="5" placeholder='Premium Pricing Description' name='Premium'
                            onChange={(e) => {
 
                                 setgigPremiumPriceDesc(e.target.value);
@@ -190,9 +190,9 @@ export default function GigForm() {
 
                </div>
                <div className='description'>
-                <h1>Gig description</h1>
+                <h1 className="gig-heading">Gig description</h1>
 
-                <textarea cols="110" rows="5" placeholder='Gig Description' name='Gig-description'
+                <textarea className="gig-text-area" cols="110" rows="5" placeholder='Gig Description' name='Gig-description'
                     onChange={(e) => {
 
                                 setgigDesc(e.target.value);
@@ -202,9 +202,9 @@ export default function GigForm() {
                </div>
             
                <div className='requirements'>
-                <h1>Gig requirements</h1>
+                <h1 className="gig-heading">Gig requirements</h1>
 
-                <textarea cols="110" rows="5" placeholder='Gig requirements' name='Gig-requirements'
+                <textarea className="gig-text-area" cols="110" rows="5" placeholder='Gig requirements' name='Gig-requirements'
                     onChange={(e) => {
 
                                 setgigReq(e.target.value);
@@ -212,7 +212,7 @@ export default function GigForm() {
                 ></textarea>
 
                 <div className="form-group">
-                    <label htmlFor="file">Choose Gig Image</label>
+                    <label htmlFor="file" className="img-btn">Choose Gig Image</label>
                     <input type="file" fileName="gigImage" className="form-control-file" onChange={OnChangeFile}/>
                 </div>
 

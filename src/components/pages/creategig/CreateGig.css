@@ -28,7 +28,7 @@
   transition: all 0.3s ease-out;
 }
 .createGigWrapper .createGigbutton:nth-child(1):hover .createGigIcon{
-  background: #03e734;
+  background: #df1f3f;
 }
 
 .createGigWrapper .createGigbutton .createGigIcon i{
@@ -47,7 +47,7 @@
   transition: all 0.3s ease-out;
 }
 .createGigWrapper .createGigbutton:nth-child(1) span{
-  color: #03e734;
+  color: #df1f3f;
 }
 
 .fa-plus{

@@ -7,7 +7,7 @@ function Messages() {
         <div className="messages-container">
             <NavbarSO />
             <SubNavbar/>
-            <h1>messages</h1>
+            
         </div>
     )
 }
