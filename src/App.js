@@ -32,6 +32,7 @@ import ResetPassword from './Authscreens/ResetPassword'
 import Activate from './Authscreens/Activate'
 import Private from './Authscreens/Private'
 import PrivateRoute from './Routes/PrivateRoute';
+import PublicRoute from './Routes/PublicRoute';
 
 function App() {
 
@@ -53,21 +54,21 @@ function App() {
       <Router>
         <Navbar/>
         <Switch>
-        <Route path='/' exact component={welome}/>
+        <PublicRoute restricted={true} path='/' exact component={welome}/>
         <Route path='/aboutus' exact component={AboutUs}/>
-        <Route path='/home' exact component={Home}/>
-        <Route path='/data' exact component={Data}/>
-        <Route path='/grpahic-and-design' exact component={Graphic}/>
-        <Route path='/other' exact component={Other}/>
-        <Route path='/programming-and-tech' exact component={Programming}/>
+        <PrivateRoute path='/home' exact component={Home}/>
+        <PrivateRoute path='/data' exact component={Data}/>
+        <PrivateRoute path='/grpahic-and-design' exact component={Graphic}/>
+        <PrivateRoute path='/other' exact component={Other}/>
+        <PrivateRoute path='/programming-and-tech' exact component={Programming}/>
         <Route path='/services' exact component={Serivces}/>
-        <Route path='/video-and-animation' exact component={Video}/>
-        <Route path='/writing-and-translation' exact component={Writing}/>
-        <Route path='/myprofile' exact component={MyProfile}/>
-        <Route path='/messages' exact component={Messages}/>
-        <Route path='/Gigs' exact component={Gigs}/>
+        <PrivateRoute path='/video-and-animation' exact component={Video}/>
+        <PrivateRoute path='/writing-and-translation' exact component={Writing}/>
+        <PrivateRoute path='/myprofile' exact component={MyProfile}/>
+        <PrivateRoute path='/messages' exact component={Messages}/>
+        <PrivateRoute path='/Gigs' exact component={Gigs}/>
         <Route exact path='/Gigs/:id' render={props => <GigView {...props} gigs={gigs}/>} />
-        <Route path='/GigForm' exact component={GigForm}/>
+        <PrivateRoute path='/GigForm' exact component={GigForm}/>
         <Route path='/SignUpHome' exact component={SignUpHome}/>
         <Route path='/SignIn' exact render = {props => <Login {...props} />} />
         <Route path='/SellerSignUp' exact render={props => <SellerRegister {...props} />} />
